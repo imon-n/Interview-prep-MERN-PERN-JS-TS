@@ -37,11 +37,21 @@ age = 24;           // ✅ Allowed
 
 ### Answer
 
-Hoisting is JavaScript's default behavior of moving declarations to the top of their scope before code execution.
+**Hoisting** is JavaScript's behavior where declarations are processed before the code starts executing.
 
-- Variables declared with `var` are hoisted and initialized with `undefined`.
-- Variables declared with `let` and `const` are hoisted but remain in the **Temporal Dead Zone (TDZ)** until they are initialized.
-- Function declarations are fully hoisted.
+JavaScript works in two main phases:
+
+### 1. Memory Creation Phase
+
+Before executing the code, JavaScript looks for variables and functions and creates memory for them.
+
+- `var` → memory is created and initialized with `undefined`
+- `let` and `const` → memory is created but they are not initialized, so they stay in the **Temporal Dead Zone (TDZ)**
+- Function declarations → are stored completely in memory
+
+### 2. Execution Phase
+
+JavaScript then executes the code **line by line**.
 
 ### Example
 
@@ -49,25 +59,14 @@ Hoisting is JavaScript's default behavior of moving declarations to the top of t
 console.log(a); // undefined
 var a = 10;
 
-// console.log(b); // ReferenceError
+console.log(b); // ReferenceError
 let b = 20;
 
-greet(); // Works
+greet(); // Hello
 
 function greet() {
     console.log("Hello");
 }
-```
-
-### Interview Tip
-
-Remember:
-
-- `var` → Hoisted with `undefined`
-- `let` & `const` → Hoisted but cannot be accessed before initialization (TDZ)
-- Function declarations → Fully hoisted
-
----
 
 ## Q3. What are the primitive data types in JavaScript?
 
