@@ -459,4 +459,481 @@ Promise → .then() / .catch()
 async/await → Cleaner syntax for Promises
 ```
 
+
+### Q24. What is the difference between `call()`, `apply()`, and `bind()`?
+
+### Answer
+
+`call()`, `apply()`, and `bind()` are used to control the value of the `this` keyword when calling a function.
+
+The main difference is how they pass arguments and whether they execute the function immediately.
+
+| Method | Arguments | Executes Immediately? |
+|---|---|---|
+| `call()` | Individual arguments | ✅ Yes |
+| `apply()` | Arguments as an array | ✅ Yes |
+| `bind()` | Individual arguments | ❌ No, returns a new function |
+
+### `call()`
+
+```javascript
+const user = {
+    name: "Imon"
+};
+
+function greet(city) {
+    console.log(`Hello ${this.name} from ${city}`);
+}
+
+greet.call(user, "Chattogram");
+// Hello Imon from Chattogram
+```
+
+### `apply()`
+
+```javascript
+greet.apply(user, ["Chattogram"]);
+// Hello Imon from Chattogram
+```
+
+The main difference is that `apply()` takes arguments as an **array**.
+
+### `bind()`
+
+```javascript
+const newGreet = greet.bind(user, "Chattogram");
+
+newGreet();
+// Hello Imon from Chattogram
+```
+
+`bind()` returns a new function that can be called later.
+
+### Interview Tip
+
+Remember:
+
+```text
+call()  → arguments separately → executes now
+apply() → arguments as array    → executes now
+bind()  → returns new function  → executes later
+```
+
+---
+
+### Q25. What is prototypal inheritance in JavaScript?
+
+### Answer
+
+**Prototypal inheritance** is a mechanism in JavaScript where an object can access properties and methods from another object through its **prototype**.
+
+Every JavaScript object has an internal link to another object called its prototype.
+
+### Example
+
+```javascript
+const person = {
+    greet() {
+        console.log("Hello!");
+    }
+};
+
+const user = Object.create(person);
+
+user.greet();
+// Hello!
+```
+
+Here, `user` does not have its own `greet()` method. JavaScript looks at its prototype (`person`) and finds the method there.
+
+### Using Constructor Functions
+
+```javascript
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.greet = function () {
+    console.log(`Hello, ${this.name}`);
+};
+
+const user = new Person("Imon");
+
+user.greet();
+// Hello, Imon
+```
+
+### Interview Tip
+
+When JavaScript cannot find a property on an object, it looks for that property in the object's **prototype chain**.
+
+```text
+Object
+   ↓
+Prototype
+   ↓
+Prototype's Prototype
+   ↓
+null
+```
+
+---
+
+### Q26. Explain the concept of the `this` keyword in different contexts.
+
+### Answer
+
+The `this` keyword refers to the object associated with the current execution context.
+
+Its value depends on **how a function is called**, not where the function is written.
+
+### 1. Global Context
+
+```javascript
+console.log(this);
+```
+
+In a browser's regular script, `this` refers to the global `window` object.
+
+### 2. Object Method
+
+```javascript
+const user = {
+    name: "Imon",
+
+    greet() {
+        console.log(this.name);
+    }
+};
+
+user.greet();
+// Imon
+```
+
+Here, `this` refers to the `user` object.
+
+### 3. Regular Function
+
+```javascript
+function showThis() {
+    console.log(this);
+}
+
+showThis();
+```
+
+The value depends on the execution mode. In strict mode, `this` is `undefined`.
+
+### 4. Arrow Function
+
+Arrow functions do **not** have their own `this`. They inherit `this` from their surrounding lexical scope.
+
+```javascript
+const user = {
+    name: "Imon",
+
+    greet: () => {
+        console.log(this.name);
+    }
+};
+```
+
+Using an arrow function as an object method generally does **not** make `this` refer to the object.
+
+### 5. Constructor with `new`
+
+```javascript
+function User(name) {
+    this.name = name;
+}
+
+const user = new User("Imon");
+
+console.log(user.name);
+// Imon
+```
+
+Here, `this` refers to the newly created object.
+
+### Interview Tip
+
+Remember:
+
+```text
+Object method → this = object
+Regular function → depends on how it is called
+Arrow function → inherits this
+new → this = newly created object
+call/apply/bind → explicitly set this
+```
+
+---
+
+### Q27. What are JavaScript modules (`import`/`export`)?
+
+### Answer
+
+**JavaScript modules** allow us to split code into separate files and share variables, functions, classes, or objects between them.
+
+This makes applications easier to organize and maintain.
+
+### Named Export
+
+```javascript
+// math.js
+
+export function add(a, b) {
+    return a + b;
+}
+
+export function subtract(a, b) {
+    return a - b;
+}
+```
+
+### Named Import
+
+```javascript
+// app.js
+
+import { add, subtract } from "./math.js";
+
+console.log(add(10, 5));
+console.log(subtract(10, 5));
+```
+
+### Default Export
+
+```javascript
+// user.js
+
+export default function getUser() {
+    return "Imon";
+}
+```
+
+Import:
+
+```javascript
+import getUser from "./user.js";
+
+console.log(getUser());
+```
+
+### Interview Tip
+
+- `export` → Makes code available to other modules.
+- `import` → Uses exported code.
+- Named exports use `{ }`.
+- A default export can be imported with any name.
+
+---
+
+### Q28. What is the difference between shallow copy and deep copy of objects?
+
+### Answer
+
+A **shallow copy** copies the top-level properties, but nested objects are still shared.
+
+A **deep copy** creates a completely independent copy, including nested objects.
+
+### Shallow Copy
+
+```javascript
+const user = {
+    name: "Imon",
+    address: {
+        city: "Chattogram"
+    }
+};
+
+const copy = { ...user };
+
+copy.address.city = "Dhaka";
+
+console.log(user.address.city);
+// Dhaka
+```
+
+The nested `address` object is still shared.
+
+### Deep Copy
+
+One modern way is `structuredClone()`:
+
+```javascript
+const user = {
+    name: "Imon",
+    address: {
+        city: "Chattogram"
+    }
+};
+
+const copy = structuredClone(user);
+
+copy.address.city = "Dhaka";
+
+console.log(user.address.city);
+// Chattogram
+```
+
+Now the nested object is also copied.
+
+### Comparison
+
+| Shallow Copy | Deep Copy |
+|---|---|
+| Copies top-level properties | Copies nested properties too |
+| Nested objects are shared | Nested objects are independent |
+| Faster | Usually more expensive |
+| `{ ...obj }` | `structuredClone(obj)` |
+
+### Interview Tip
+
+```text
+Shallow copy → nested references are shared
+Deep copy    → nested data is independent
+```
+
+---
+
+### Q29. What are `WeakMap` and `WeakSet`, and when would you use them?
+
+### Answer
+
+`WeakMap` and `WeakSet` are special collections that hold **weak references to objects**.
+
+This means they do not prevent objects from being garbage-collected when there are no other references to them.
+
+### WeakMap
+
+A `WeakMap` stores **key-value pairs**, where the keys must be objects.
+
+```javascript
+const weakMap = new WeakMap();
+
+let user = {
+    name: "Imon"
+};
+
+weakMap.set(user, "User Data");
+
+console.log(weakMap.get(user));
+// User Data
+```
+
+If the `user` object is no longer referenced elsewhere, it can be garbage-collected.
+
+### WeakSet
+
+A `WeakSet` stores objects as values.
+
+```javascript
+const weakSet = new WeakSet();
+
+let user = {
+    name: "Imon"
+};
+
+weakSet.add(user);
+
+console.log(weakSet.has(user));
+// true
+```
+
+### When to Use Them
+
+They can be useful for:
+
+- Storing metadata associated with objects.
+- Tracking objects without preventing garbage collection.
+- Managing private-like object-related data.
+
+### Interview Tip
+
+Remember:
+
+```text
+WeakMap → Object keys + values
+WeakSet → Objects only
+```
+
+They are **not iterable**, so you cannot use methods like `forEach()` on them.
+
+---
+
+### Q30. Explain the concept of memoization with an example.
+
+### Answer
+
+**Memoization** is an optimization technique where the result of an expensive function is stored so that the same calculation does not need to be performed again.
+
+### Example
+
+```javascript
+function memoize(fn) {
+    const cache = {};
+
+    return function (n) {
+        if (n in cache) {
+            return cache[n];
+        }
+
+        const result = fn(n);
+        cache[n] = result;
+
+        return result;
+    };
+}
+
+function square(n) {
+    console.log("Calculating...");
+    return n * n;
+}
+
+const memoizedSquare = memoize(square);
+
+console.log(memoizedSquare(5));
+// Calculating...
+// 25
+
+console.log(memoizedSquare(5));
+// 25
+```
+
+The second time `memoizedSquare(5)` is called, JavaScript gets the result from the cache instead of calculating `5 × 5` again.
+
+### How It Works
+
+```text
+First call
+    ↓
+Calculate result
+    ↓
+Store result in cache
+    ↓
+Return result
+
+Same input again
+    ↓
+Check cache
+    ↓
+Return stored result
+```
+
+### Interview Tip
+
+Memoization is useful when:
+
+- A function is expensive to execute.
+- The same inputs are used repeatedly.
+- The function is deterministic (same input → same output).
+
+**Main idea:**
+
+```text
+Memoization = Cache previous results to improve performance.
+```
+```
+
 For arrays, prefer `for...of` when you need the values.
