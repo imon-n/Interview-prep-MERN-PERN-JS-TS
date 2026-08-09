@@ -67,7 +67,7 @@ greet(); // Hello
 function greet() {
     console.log("Hello");
 }
-
+```
 ## Q3. What are the primitive data types in JavaScript?
 
 ### Answer
@@ -96,31 +96,10 @@ let id = Symbol("id");                 // Symbol
 let bigNumber = 1234567890123456789n;  // BigInt
 ```
 
-### Interview Tip
-
-The 7 primitive data types are:
-
-- String
-- Number
-- Boolean
-- Undefined
-- Null
-- Symbol
-- BigInt
-
-
-
-
 ## Q4. What is the difference between `==` and `===` in JavaScript?
-
-### Answer
-
-Both `==` and `===` are comparison operators, but they work differently.
-
-- `==` (Loose Equality) compares values after performing type conversion (type coercion).
-- `===` (Strict Equality) compares both value and data type without type conversion.
-
-### Example
+- `==` → Compares only values (after type conversion).
+- `===` → Compares both value and type.
+- Always prefer `===` to avoid unexpected results.
 
 ```javascript
 console.log(5 == "5");    // true
@@ -129,12 +108,6 @@ console.log(5 === "5");   // false
 console.log(true == 1);   // true
 console.log(true === 1);  // false
 ```
-
-### Interview Tip
-
-- `==` → Compares only values (after type conversion).
-- `===` → Compares both value and type.
-- Always prefer `===` to avoid unexpected results.
 
 ---
 
