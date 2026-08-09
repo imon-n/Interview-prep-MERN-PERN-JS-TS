@@ -224,4 +224,239 @@ for...in → keys
 for...of → values
 ```
 
+
+
+### Q20. What are template literals and tagged templates?
+
+### Answer
+
+**Template literals** are a way to create strings using backticks (`` ` ``). They allow us to easily insert variables and expressions using `${}`.
+
+#### Template Literal
+
+```javascript
+const name = "Imon";
+const age = 23;
+
+const message = `My name is ${name} and I am ${age} years old.`;
+
+console.log(message);
+// My name is Imon and I am 23 years old.
+```
+
+They also support **multi-line strings**:
+
+```javascript
+const message = `
+Hello Imon,
+Welcome to JavaScript!
+`;
+
+console.log(message);
+```
+
+#### Tagged Template
+
+A **tagged template** allows a function to process a template literal before it is created.
+
+```javascript
+function greet(strings, name) {
+    return `${strings[0]}${name.toUpperCase()}${strings[1]}`;
+}
+
+const name = "Imon";
+
+console.log(greet`Hello ${name}!`);
+// Hello IMON!
+```
+
+### Interview Tip
+
+- Template literals → Use backticks `` ` ``
+- `${}` → Insert variables or expressions
+- Tagged templates → A function processes the template literal
+
+---
+
+### Q21. What is the event loop in JavaScript?
+
+### Answer
+
+The **event loop** is the mechanism that allows JavaScript to handle asynchronous operations even though JavaScript is **single-threaded**.
+
+It continuously checks whether the **call stack** is empty and then moves waiting callbacks from the task queues to the call stack for execution.
+
+### Example
+
+```javascript
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Timeout");
+}, 0);
+
+console.log("End");
+```
+
+### Output
+
+```text
+Start
+End
+Timeout
+```
+
+### Why?
+
+1. `"Start"` is executed.
+2. `setTimeout()` is sent to the browser/Node.js environment.
+3. `"End"` is executed.
+4. The callback waits in the task queue.
+5. When the call stack is empty, the event loop moves the callback to the call stack.
+6. `"Timeout"` is executed.
+
+### Simple Diagram
+
+```text
+Call Stack
+    ↓
+Web APIs / Node.js APIs
+    ↓
+Task Queue
+    ↓
+Event Loop
+    ↓
+Call Stack
+```
+
+### Interview Tip
+
+Remember:
+
+**JavaScript is single-threaded, but the event loop allows it to handle asynchronous tasks without blocking the main thread.**
+
+---
+
+### Q22. Explain how Promises work in JavaScript.
+
+### Answer
+
+A **Promise** is an object that represents the eventual result of an asynchronous operation.
+
+A Promise has three states:
+
+1. **Pending** → Operation is still running.
+2. **Fulfilled** → Operation completed successfully.
+3. **Rejected** → Operation failed.
+
+### Example
+
+```javascript
+const promise = new Promise((resolve, reject) => {
+    const success = true;
+
+    if (success) {
+        resolve("Operation successful!");
+    } else {
+        reject("Operation failed!");
+    }
+});
+
+promise
+    .then(result => {
+        console.log(result);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+```
+
+### Using a Real Example
+
+```javascript
+fetch("https://api.example.com/users")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+```
+
+### Important Methods
+
+- `.then()` → Handles successful result.
+- `.catch()` → Handles errors.
+- `.finally()` → Runs whether the Promise succeeds or fails.
+
+### Interview Tip
+
+Remember the three states:
+
+```text
+Pending → Fulfilled
+        ↘ Rejected
+```
+
+Promises are commonly used for **API calls, database operations, file operations, and other asynchronous tasks**.
+
+---
+
+### Q23. What is `async/await` and how does it improve upon Promises?
+
+### Answer
+
+`async/await` is a cleaner way to work with Promises. It makes asynchronous code look and behave more like synchronous code.
+
+- `async` makes a function return a Promise.
+- `await` pauses execution inside an `async` function until the Promise settles.
+
+### Using Promise `.then()`
+
+```javascript
+function getUser() {
+    return fetch("https://api.example.com/users")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+}
+```
+
+### Using `async/await`
+
+```javascript
+async function getUser() {
+    try {
+        const response = await fetch("https://api.example.com/users");
+        const data = await response.json();
+
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+}
+```
+
+### Advantages of `async/await`
+
+- Easier to read and understand.
+- Makes complex asynchronous code cleaner.
+- Uses familiar `try...catch` for error handling.
+- Avoids deeply nested `.then()` chains.
+
+### Interview Tip
+
+`async/await` **does not replace Promises**. It is built on top of Promises and provides cleaner syntax for working with them.
+
+```text
+Promise → .then() / .catch()
+
+async/await → Cleaner syntax for Promises
+```
+
 For arrays, prefer `for...of` when you need the values.
