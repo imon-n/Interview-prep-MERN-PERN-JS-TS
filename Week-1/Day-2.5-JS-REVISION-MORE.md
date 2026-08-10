@@ -875,37 +875,3 @@ Object has references → Keep it in memory
 No reachable references → Eligible for garbage collection
 ```
 
----
-
-# Quick Revision — Q31–Q45
-
-```text
-31. Primitive vs Reference
-32. Shallow Equality vs Deep Equality
-33. Lexical Scope
-34. Function Scope vs Block Scope
-35. Callback Function
-36. Callback Hell
-37. Synchronous vs Asynchronous
-38. Microtasks vs Macrotasks
-39. Promise.all vs allSettled vs race vs any
-40. Error Handling
-41. localStorage vs sessionStorage vs Cookies
-42. JSON.stringify vs JSON.parse
-43. Optional Chaining vs Nullish Coalescing
-44. Object.freeze vs Object.seal
-45. Garbage Collection
-```
-
-### Most Important for MERN Interviews
-
-```text
-★★★★★ 35. Callback
-★★★★★ 36. Callback Hell
-★★★★★ 37. Sync vs Async
-★★★★★ 38. Event Loop / Microtasks / Macrotasks
-★★★★★ 39. Promise Methods
-★★★★★ 41. Storage & Cookies
-★★★★★ 42. JSON
-★★★★★ 43. Optional Chaining & Nullish Coalescing
-```
