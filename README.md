@@ -4,7 +4,7 @@
 
 ### 🟢 Basic Number & Logic
 
-- [x] **1. Factorial of a Number** — <a href="https://www.geeksforgeeks.org/problems/factorial5739/1" target="_blank">GeeksforGeeks</a>
+- **1. Factorial of a Number** — <a href="https://www.geeksforgeeks.org/problems/factorial5739/1" target="_blank">GeeksforGeeks</a>
 ```
 class Solution:
     def factorial(self, n: int) -> int:
@@ -14,7 +14,20 @@ class Solution:
             fact = fact * i
         return fact
 ```
-- [ ] **2. Fibonacci Series** — <a href="https://leetcode.com/problems/fibonacci-number/" target="_blank">LeetCode</a>
+- **2. Fibonacci Series** — <a href="https://leetcode.com/problems/fibonacci-number/" target="_blank">LeetCode</a>
+```
+class Solution(object):
+    def fib(self, n):
+        a = 0
+        b = 1
+        if n==0 or n==1:
+            return n
+        for i in range(1,n):
+            next = a + b
+            a = b
+            b = next
+        return next
+```
 - [ ] **3. Check Prime Number** — <a href="https://www.geeksforgeeks.org/problems/prime-number2314/1" target="_blank">GeeksforGeeks</a>
 - [ ] **4. Reverse a Number** — <a href="https://www.geeksforgeeks.org/problems/reverse-digit0316/1" target="_blank">GeeksforGeeks</a>
 - [ ] **5. Check Palindrome Number** — <a href="https://leetcode.com/problems/palindrome-number/" target="_blank">LeetCode</a>
