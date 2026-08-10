@@ -1,4 +1,4 @@
-# 🔥 Coding Problems — Fresher/Intern Interview Preparation
+# 🔥 Coding Problems — Fresher Interview Preparation
 
 ## 📋 Problem Checklist
 
