@@ -1,32 +1,9 @@
-| Problem No. | Topic Name           | Title                                            | Checkbox | Problem Link                                                                                               |
-| ----------: | -------------------- | ------------------------------------------------ | :------: | ---------------------------------------------------------------------------------------------------------- |
-|           1 | Basic Number & Logic | Factorial of a Number                            |     ☐    | [GeeksforGeeks](https://www.geeksforgeeks.org/problems/factorial5739/1)                                    |
-|           2 | Basic Number & Logic | Fibonacci Series                                 |     ☐    | [LeetCode](https://leetcode.com/problems/fibonacci-number/)                                                |
-|           3 | Basic Number & Logic | Check Prime Number                               |     ☐    | [GeeksforGeeks](https://www.geeksforgeeks.org/problems/prime-number2314/1)                                 |
-|           4 | Basic Number & Logic | Reverse a Number                                 |     ☐    | [GeeksforGeeks](https://www.geeksforgeeks.org/problems/reverse-digit0316/1)                                |
-|           5 | Basic Number & Logic | Check Palindrome Number                          |     ☐    | [LeetCode](https://leetcode.com/problems/palindrome-number/)                                               |
-|           6 | Basic Number & Logic | Find GCD and LCM                                 |     ☐    | [GeeksforGeeks](https://www.geeksforgeeks.org/problems/lcm-and-gcd4516/1)                                  |
-|           7 | String               | Reverse a String ⭐                               |     ☐    | [GeeksforGeeks](https://www.geeksforgeeks.org/problems/reverse-a-string/1)                                 |
-|           8 | String               | Check Palindrome String ⭐                        |     ☐    | [LeetCode](https://leetcode.com/problems/valid-palindrome/)                                                |
-|           9 | String               | Check Anagram ⭐                                  |     ☐    | [LeetCode](https://leetcode.com/problems/valid-anagram/)                                                   |
-|          10 | String               | Count Character Frequency ⭐                      |     ☐    | [GeeksforGeeks](https://www.geeksforgeeks.org/problems/frequency-of-array-elements-1587115620/1)           |
-|          11 | String               | First Non-Repeating Character                    |     ☐    | [LeetCode](https://leetcode.com/problems/first-unique-character-in-a-string/)                              |
-|          12 | String               | Reverse Words in a String                        |     ☐    | [LeetCode](https://leetcode.com/problems/reverse-words-in-a-string/)                                       |
-|          13 | Array                | Find Largest & Smallest Element                  |     ☐    | [GeeksforGeeks](https://www.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1) |
-|          14 | Array                | Find Second Largest Element ⭐                    |     ☐    | [GeeksforGeeks](https://www.geeksforgeeks.org/problems/second-largest3735/1)                               |
-|          15 | Array                | Remove Duplicates from Array ⭐                   |     ☐    | [LeetCode](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)                             |
-|          16 | Array                | Find Duplicate Elements                          |     ☐    | [LeetCode](https://leetcode.com/problems/find-all-duplicates-in-an-array/)                                 |
-|          17 | Array                | Find Missing Number ⭐                            |     ☐    | [LeetCode](https://leetcode.com/problems/missing-number/)                                                  |
-|          18 | Array                | Move All Zeros to End ⭐                          |     ☐    | [LeetCode](https://leetcode.com/problems/move-zeroes/)                                                     |
-|          19 | Array                | Merge Two Sorted Arrays                          |     ☐    | [LeetCode](https://leetcode.com/problems/merge-sorted-array/)                                              |
-|          20 | Array                | Find Intersection of Two Arrays                  |     ☐    | [LeetCode](https://leetcode.com/problems/intersection-of-two-arrays/)                                      |
-|          21 | HashMap              | Two Sum ⭐⭐⭐                                      |     ☐    | [LeetCode](https://leetcode.com/problems/two-sum/)                                                         |
-|          22 | Array / Algorithm    | Maximum Subarray Sum ⭐                           |     ☐    | [LeetCode](https://leetcode.com/problems/maximum-subarray/)                                                |
-|          23 | Greedy               | Best Time to Buy & Sell Stock ⭐                  |     ☐    | [LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)                                 |
-|          24 | Binary Search        | Binary Search ⭐⭐⭐                                |     ☐    | [LeetCode](https://leetcode.com/problems/binary-search/)                                                   |
-|          25 | Binary Search        | Search Insert Position                           |     ☐    | [LeetCode](https://leetcode.com/problems/search-insert-position/)                                          |
-|          26 | Stack                | Valid Parentheses ⭐                              |     ☐    | [LeetCode](https://leetcode.com/problems/valid-parentheses/)                                               |
-|          27 | Sliding Window       | Longest Substring Without Repeating Characters ⭐ |     ☐    | [LeetCode](https://leetcode.com/problems/longest-substring-without-repeating-characters/)                  |
-|          28 | Linked List          | Reverse a Linked List                            |     ☐    | [LeetCode](https://leetcode.com/problems/reverse-linked-list/)                                             |
-|          29 | Linked List          | Detect Cycle in Linked List                      |     ☐    | [LeetCode](https://leetcode.com/problems/linked-list-cycle/)                                               |
-|          30 | Array / HashMap      | Majority Element                                 |     ☐    | [LeetCode](https://leetcode.com/problems/majority-element/)                                                |
+## 📋 Problem Checklist
+
+### Basic Number & Logic
+
+- [ ] **1. Factorial of a Number** — [GeeksforGeeks](https://www.geeksforgeeks.org/problems/factorial5739/1)
+- [ ] **2. Fibonacci Series** — [LeetCode](https://leetcode.com/problems/fibonacci-number/)
+- [ ] **3. Check Prime Number** — [GeeksforGeeks](https://www.geeksforgeeks.org/problems/prime-number2314/1)
+- [ ] **4. Reverse a Number** — [GeeksforGeeks](https://www.geeksforgeeks.org/problems/reverse-digit0316/1)
+- [ ] **5. Check Palindrome Number** — [LeetCode](https://leetcode.com/problems/palindrome-number/)
