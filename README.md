@@ -4,7 +4,7 @@
 
 ### 🟢 Basic Number & Logic
 
-- **1. Factorial of a Number** — <a href="https://www.geeksforgeeks.org/problems/factorial5739/1" target="_blank">GeeksforGeeks</a>
+**1. Factorial of a Number** — <a href="https://www.geeksforgeeks.org/problems/factorial5739/1" target="_blank">GeeksforGeeks</a>
 ```
 class Solution:
     def factorial(self, n: int) -> int:
@@ -14,7 +14,7 @@ class Solution:
             fact = fact * i
         return fact
 ```
-- **2. Fibonacci Series** — <a href="https://leetcode.com/problems/fibonacci-number/" target="_blank">LeetCode</a>
+**2. Fibonacci Series** — <a href="https://leetcode.com/problems/fibonacci-number/" target="_blank">LeetCode</a>
 ```
 class Solution(object):
     def fib(self, n):
