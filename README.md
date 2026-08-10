@@ -1,6 +1,4 @@
-# 🔥 Coding Problems — Fresher Interview Preparation
-
-## 📋 Problem Checklist
+# 🔥Coding Problems — Fresher Interview Preparation
 
 ### 🟢 Basic Number & Logic
 
