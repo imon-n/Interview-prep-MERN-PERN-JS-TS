@@ -5,6 +5,15 @@
 ### 🟢 Basic Number & Logic
 
 - [x] **1. Factorial of a Number** — <a href="https://www.geeksforgeeks.org/problems/factorial5739/1" target="_blank">GeeksforGeeks</a>
+```
+class Solution:
+    def factorial(self, n: int) -> int:
+        # code here
+        fact = 1
+        for i in range(1, n+1):
+            fact = fact * i
+        return fact
+```
 - [ ] **2. Fibonacci Series** — <a href="https://leetcode.com/problems/fibonacci-number/" target="_blank">LeetCode</a>
 - [ ] **3. Check Prime Number** — <a href="https://www.geeksforgeeks.org/problems/prime-number2314/1" target="_blank">GeeksforGeeks</a>
 - [ ] **4. Reverse a Number** — <a href="https://www.geeksforgeeks.org/problems/reverse-digit0316/1" target="_blank">GeeksforGeeks</a>
