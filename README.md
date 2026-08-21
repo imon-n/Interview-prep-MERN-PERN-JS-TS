@@ -48,7 +48,22 @@ class Solution:
 	    n = int(n)
 	    return n
 ```
-- [ ] **5. Check Palindrome Number** — <a href="https://leetcode.com/problems/palindrome-number/" target="_blank">LeetCode</a>
+**5. Check Palindrome Number** — <a href="https://leetcode.com/problems/palindrome-number/" target="_blank">LeetCode</a>
+```
+class Solution(object):
+    def isPalindrome(self, x):
+        if x == 0:
+            return True
+        elif x > 0:
+            n = str(x)
+            n1 = n[::-1]
+            if n == n1:
+                return True
+            else:
+                return False
+        else:
+            return False
+```
 - [ ] **6. Find GCD and LCM** — <a href="https://www.geeksforgeeks.org/problems/lcm-and-gcd4516/1" target="_blank">GeeksforGeeks</a>
 
 ### 🟢 String
