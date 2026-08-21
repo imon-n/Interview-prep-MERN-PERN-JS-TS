@@ -39,7 +39,15 @@ class Solution:
         
         return True
 ```
-- [ ] **4. Reverse a Number** — <a href="https://www.geeksforgeeks.org/problems/reverse-digit0316/1" target="_blank">GeeksforGeeks</a>
+**4. Reverse a Number** — <a href="https://www.geeksforgeeks.org/problems/reverse-digit0316/1" target="_blank">GeeksforGeeks</a>
+```
+class Solution:
+	def reverseDigits(self, n):
+	    n = str(n)
+	    n = n[::-1]
+	    n = int(n)
+	    return n
+```
 - [ ] **5. Check Palindrome Number** — <a href="https://leetcode.com/problems/palindrome-number/" target="_blank">LeetCode</a>
 - [ ] **6. Find GCD and LCM** — <a href="https://www.geeksforgeeks.org/problems/lcm-and-gcd4516/1" target="_blank">GeeksforGeeks</a>
 
