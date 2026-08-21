@@ -26,7 +26,19 @@ class Solution(object):
             b = next
         return next
 ```
-- [ ] **3. Check Prime Number** — <a href="https://www.geeksforgeeks.org/problems/prime-number2314/1" target="_blank">GeeksforGeeks</a>
+**3. Check Prime Number** — <a href="https://www.geeksforgeeks.org/problems/prime-number2314/1" target="_blank">GeeksforGeeks</a>
+```
+class Solution:
+    def isPrime(self, n):
+        if n < 2:
+            return False
+        for i in range(2, int(n**0.5)+1):
+            if n % i == 0:
+                return False
+                break
+        
+        return True
+```
 - [ ] **4. Reverse a Number** — <a href="https://www.geeksforgeeks.org/problems/reverse-digit0316/1" target="_blank">GeeksforGeeks</a>
 - [ ] **5. Check Palindrome Number** — <a href="https://leetcode.com/problems/palindrome-number/" target="_blank">LeetCode</a>
 - [ ] **6. Find GCD and LCM** — <a href="https://www.geeksforgeeks.org/problems/lcm-and-gcd4516/1" target="_blank">GeeksforGeeks</a>
